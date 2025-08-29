@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoX</title>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+
+    <link rel="stylesheet" href="css/Responsive Admin Dashboard V.1.1.css">
+
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="logo">
+            <div class="search-bar">
+                <span class="material-icons-sharp">search</span>
+                <input type="search" placeholder="Search for cryptocurrencies, wallets, etc." id="searchInput">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile-container">
+                    <img src="img/profile-1.png" alt="Profile Photo" class="profile-photo" id="profilePhoto">
+                    <div class="dropdown" id="dropdown">
+                        <ul>
+                            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li>
+                                <a href="#" onclick="confirmLogout(event)">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script src="script.js"></script>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- main -->
+
+    <main>
+
+        <!-- aside -->
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </button>
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="exchange.html">
+                    <span class="material-icons-sharp">currency_exchange</span>
+                    <h4>Exchange</h4>
+                </a>
+                <a href="wallet.html">
+                    <span class="material-icons-sharp">account_balance_wallet</span>
+                    <h4>Wallet</h4>
+                </a>
+                <a href="transaction.html">
+                    <span class="material-icons-sharp">payment</span>
+                    <h4>Transactions</h4>
+                </a>
+                <a href="analytics.html">
+                    <span class="material-icons-sharp">pie_chart</span>
+                    <h4>Analytics</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insert_comment</span>
+                    <h4>Messages</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">help_center</span>
+                    <h4>Help Center</h4>
+                </a>
+                <a href="settings.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h4>Settings</h4>
+                </a>
+            </div>
+            <div class="updates">
+                <span class="material-icons-sharp">update</span>
+                <h4>Updates Available</h4>
+                <small>Security Updates</small>
+                <small>General Updates</small>
+                <a href="#">Update Now</a>
+
+            </div>
+
+        </aside>
+
+        <!-- section middle -->
+        <section class="middle">
+            <div class="header">
+                <h1>Overview</h1>
+                <input type="date">
+            </div>
+            <div class="cards">
+                <!-- card 1 -->
+                <div class="card">
+                    <div class="top">
+                        <div class="left">
+                            <img src="img/BTC.png" alt="card1-1">
+                            <h2>BTC</h2>
+                        </div>
+                        <img src="img/visa.png" class="right" alt="card1-2">
+                    </div>
+                    <div class="middle">
+                        <h1>$543,106</h1>
+                        <div class="chip">
+                            <img src="img/card chip.png" class="chip" alt="card-chip">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <small>Card Holder</small>
+                            <h5>WILLIAM PI</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small>Expiry</small>
+                                <h5>06/24</h5>
+                            </div>
+                            <div class="cvv">
+                                <small>CVV</small>
+                                <h5>123</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="card">
+                    <div class="top">
+                        <div class="left">
+                            <img src="img/ETH.png" alt="card2-1">
+                            <h2>ETH</h2>
+                        </div>
+                        <img src="img/revolute.png" class="right" alt="card2-2">
+                    </div>
+                    <div class="middle">
+                        <h1>$277,762</h1>
+                        <div class="chip">
+                            <img src="img/card chip.png" class="chip" alt="card-chip">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <small>Card Holder</small>
+                            <h5>WILLIAM PI</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small>Expiry</small>
+                                <h5>11/25</h5>
+                            </div>
+                            <div class="cvv">
+                                <small>CVV</small>
+                                <h5>789</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="card">
+                    <div class="top">
+                        <div class="left">
+                            <img src="img/USDT.png" alt="card3-1">
+                            <h2>USDT</h2>
+                        </div>
+                        <img src="img/master card.png" class="right" alt="card3-2">
+                    </div>
+                    <div class="middle">
+                        <h1>$120,988</h1>
+                        <div class="chip">
+                            <img src="img/card chip.png" class="chip" alt="card-chip">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <small>Card Holder</small>
+                            <h5>WILLIAM PI</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small>Expiry</small>
+                                <h5>05/27</h5>
+                            </div>
+                            <div class="cvv">
+                                <small>CVV</small>
+                                <h5>456</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- monthly report -->
+            <div class="monthly-report">
+                <div class="report">
+                    <h3>Income</h3>
+                    <div>
+                        <details>
+                            <h1>$19,230</h1>
+                            <h4 class="success">+4.6%</h4>
+                        </details>
+                        <p class="text-muted">Compared to $18,384 last month</p>
+                    </div>
+                </div>
+                <div class="report">
+                    <h3>Expenses</h3>
+                    <div>
+                        <details>
+                            <h1>$9,113</h1>
+                            <h4 class="danger">-6.2%</h4>
+                        </details>
+                        <p class="text-muted">Compared to $9,715 last month</p>
+                    </div>
+                </div>
+                <div class="report">
+                    <h3>Cashback</h3>
+                    <div>
+                        <details>
+                            <h1>$4,390</h1>
+                            <h4 class="success">+2.9%</h4>
+                        </details>
+                        <p class="text-muted">Compared to $4,266 last month</p>
+                    </div>
+                </div>
+                <div class="report">
+                    <h3>Income</h3>
+                    <div>
+                        <details>
+                            <h1>$86,374</h1>
+                            <h4 class="danger">-5.2%</h4>
+                        </details>
+                        <p class="text-muted">Compared to $91,111 last month</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- section right -->
+            <section class="right">
+                <!--WhishList-->
+                <div class="wishlists">
+                    <div class="header">
+                        <h2>WishList</h2>
+                        <a href="#">More <span class="material-icons-sharp">chevron_right</span></a>
+                    </div>
+                    <!--  wishlist var -->
+                    <div class="wishlist">
+                        <img src="img/tesla.png" alt="inv2">
+                        <h4>Tesla</h4>
+                        <div class="date-time">
+                            <p>7 Fev, 2023</p>
+                            <small class="text-muted">9:14pm</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1402</p>
+                            <small class="text-muted">Bonds</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$196,81</h4>
+                            <small class="success">+1.05%</small>
+                        </div>
+                    </div>
+                    <div class="wishlist">
+                        <img src="img/mcdonalds.png" alt="inv4">
+                        <h4>McDonalds</h4>
+                        <div class="date-time">
+                            <p>7 Fev, 2023</p>
+                            <small class="text-muted">9:14pm</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1402</p>
+                            <small class="text-muted">Bonds</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$267,34</h4>
+                            <small class="danger">-0.22%</small>
+                        </div>
+                    </div>
+                    <div class="wishlist">
+                        <img src="img/uniliver.png" alt="inv1">
+                        <h4>Uniliver</h4>
+                        <div class="date-time">
+                            <p>7 Fev, 2023</p>
+                            <small class="text-muted">9:14pm</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1402</p>
+                            <small class="text-muted">Bonds</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$49,57</h4>
+                            <small class="danger">-1.39%</small>
+                        </div>
+                    </div>
+                    <div class="wishlist">
+                        <img src="img/monster.png" alt="inv3">
+                        <h4>Monster</h4>
+                        <div class="date-time">
+                            <p>7 Fev, 2023</p>
+                            <small class="text-muted">9:14pm</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1402</p>
+                            <small class="text-muted">Bonds</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$102,51</h4>
+                            <small class="danger">-0.30%</small>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <!-- canvas -->
+            <canvas id="chart"></canvas>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js"
+        integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/Responsive Admin Dashboard V.1.1.js"></script>
+    <script>
+        const profilePhoto = document.getElementById("profilePhoto");
+        const dropdown = document.getElementById("dropdown");
+    
+        profilePhoto.addEventListener("click", () => {
+            dropdown.classList.toggle("show-dropdown");
+        });
+    </script>
+    <script>
+        function confirmLogout(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const userConfirmed = confirm("Are you sure you want to log out?");
+            if (userConfirmed) {
+                window.location.href = "logout.php"; // Redirect to the logout script
+            }
+        }
+    </script>
+</body>
+
+</html>

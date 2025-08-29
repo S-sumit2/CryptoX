@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsideBox - Login & Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            animation: gradientBG 6s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+    
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    
+        .auth-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out forwards;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        h2 {
+            font-size: 32px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+    
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+    
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+    
+        input:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+        }
+    
+        label {
+            position: absolute;
+            top: 16px;
+            left: 14px;
+            font-size: 16px;
+            color: #aaa;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+    
+        input:focus ~ label, input:not(:placeholder-shown) ~ label {
+            top: -17px;
+            font-size: 14px;
+            color: #2575fc;
+        }
+    
+        .form-button {
+            padding: 16px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+    
+        .form-button:hover {
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    
+        .form-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    
+        .social-buttons button {
+            width: 48%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .social-buttons button i {
+            margin-right: 8px; /* Adds space between the icon and the text */
+            font-size: 16px; /* Adjusts the size of the icon */
+        }
+    
+        .google {
+            background-color: #db4437;
+            color: white;
+        }
+    
+        .google:hover {
+            background-color: #c23321;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .facebook {
+            background-color: #4267B2;
+            color: white;
+        }
+    
+        .facebook:hover {
+            background-color: #365899;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .links a {
+            color: #2575fc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    
+        .links a:hover {
+            text-decoration: underline;
+        }
+    
+        .toggle-form {
+            cursor: pointer;
+            color: #2575fc;
+            font-size: 14px;
+            text-align: center;
+        }
+    
+        .toggle-form:hover {
+            text-decoration: underline;
+        }
+    
+        .hidden {
+            display: none;
+        }
+    
+        /* Mobile Styling */
+        @media (max-width: 480px) {
+            .auth-container {
+                padding: 20px;
+                max-width: 90%;
+            }
+    
+            h2 {
+                font-size: 24px;
+            }
+    
+            .form-button {
+                padding: 14px;
+            }
+    
+            .social-buttons button {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="form-container">
+        <!-- Login Form -->
+            <div id="login-form">
+                <h2>Welcome User</h2>
+                <form id="loginForm" method="POST" action="auth/auth.php">
+                    <div class="input-container">
+                        <input type="text" id="login-email" name="email" placeholder=" " required>
+                        <label for="login-email">Email</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="login-password" name="password" placeholder=" " required>
+                        <label for="login-password">Password</label>
+                    </div>
+                    <button type="submit" class="form-button" name="login">Login</button>
+                </form>
+                <button type="button" class="form-button signup-toggle">Sign Up</button>
+                <div class="social-buttons">
+                    <button class="google"><i class="fab fa-google"></i> Google</button>
+                    <button class="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                </div>
+                <div class="links">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="links">
+                    <span>Don't have an account? <a href="#" class="toggle-form">Create one</a></span>
+                </div>
+            </div>
+    
+            <!-- Sign Up Form -->
+            <div id="signup-form" class="hidden">
+                <h2>Create an Account</h2>
+                <form id="signupForm" method="POST" action="auth/auth.php">
+                    <div class="input-container">
+                        <input type="email" id="signup-email" name="email" placeholder=" " required>
+                        <label for="signup-email">Email Address</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="signup-number" name="phone" placeholder=" " required>
+                        <label for="signup-number">Phone Number</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="signup-username" name="username" placeholder=" " required>
+                        <label for="signup-username">Full Name</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="signup-password" name="password" placeholder=" " required>
+                        <label for="signup-password">Password</label>
+                    </div>
+                    <button type="submit" class="form-button" name="signup">Sign Up</button>
+                </form>
+                <div class="social-buttons">
+                    <button class="google"><i class="fab fa-google"></i> Google</button>
+                    <button class="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                </div>
+                <div class="links">
+                    <span>Already have an account? <a href="#" class="toggle-form">Login</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle toggling between login and signup
+        document.querySelectorAll('.toggle-form').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('login-form').classList.toggle('hidden');
+                document.getElementById('signup-form').classList.toggle('hidden');
+            });
+        });
+    
+        // Special button to open signup from within login form
+        document.querySelector('.signup-toggle')?.addEventListener('click', () => {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.remove('hidden');
+        });
+    </script>
+    
+        
+
+</body>
+</html>

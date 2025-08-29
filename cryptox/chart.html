@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart - CryptoX</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="CryptoX.html"><img src="img/logo.png" class="logo" alt="CryptoX Logo"></a>
+                <h1>Chart</h1>
+                <div class="nav-links">
+                    <a href="CryptoX.html" class="home-button">
+                        <span class="material-icons-sharp">home</span>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chart-section">
+            <h2>Performance Chart</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CryptoX. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js"
+        integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Chart.js configuration
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line', // Change to 'bar', 'pie', etc., for different chart types
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Revenue ($)',
+                    data: [12000, 15000, 18000, 20000, 22000, 25000],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Months'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Revenue ($)'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header nav {
+            background-color: #2575fc;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header nav .logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links .home-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            background-color: #2575fc;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links .home-button:hover {
+            background-color: #1a5bb8;
+        }
+
+        .nav-links .home-button span {
+            margin-right: 5px;
+            font-size: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .chart-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</body>
+
+</html>
